@@ -1,12 +1,13 @@
 const grid = document.getElementById("grid");
 let lockGame = false;
 let win = false;
-const testMode = false;
+const testMode = true;
 generateGrid();
 
 //Gerar um tabuleiro 10 x 10
 function generateGrid() {
     lockGame = false;
+    win = false
     grid.innerHTML = "";
     for (var i = 0; i < 10; i++) {
         row = grid.insertRow(i);
@@ -43,8 +44,11 @@ function revealMines() {
             if (cell.getAttribute("mine") == "true") {
                 if (win) {
                     cell.className = "win";
+                    cell.innerHTML = " &#128681;";
+
                 } else {
                     cell.className = "mine";
+                    cell.innerHTML = "&#128163;";
                 }
             }
         }
@@ -62,7 +66,6 @@ function checkGameComplete() {
         }
     }
     if (gameComplete) {
-        alert("Você Encontrou Todas as Minas!!");
         win = true
         revealMines();
     }

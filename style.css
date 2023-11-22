@@ -23,8 +23,8 @@ h1 {
     #grid tr td {
         border: 1px solid #fff;
         background-color: #999;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+            height: 25px;
         text-align: center;
     }
     
@@ -34,7 +34,7 @@ h1 {
     }
     
     #grid tr td.mine {
-        background-color: #d84315;
+        background-color: rgb(216, 21, 21);
     }
     
     #grid tr td.win {
