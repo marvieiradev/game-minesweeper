@@ -1,4 +1,5 @@
 const grid = document.getElementById("grid");
+const result = document.getElementById("result")
 let lockGame = false;
 let win = false;
 const testMode = true;
@@ -8,6 +9,8 @@ generateGrid();
 function generateGrid() {
     lockGame = false;
     win = false
+    result.style.opacity = 0
+    result.classList.remove("win", "lost")
     grid.innerHTML = "";
     for (var i = 0; i < 10; i++) {
         row = grid.insertRow(i);
@@ -38,17 +41,23 @@ function generateMines() {
 
 //Função para mostrar as minas
 function revealMines() {
+    result.style.opacity = 1
     for (var i = 0; i < 10; i++) {
         for (var j = 0; j < 10; j++) {
             var cell = grid.rows[i].cells[j];
             if (cell.getAttribute("mine") == "true") {
+
                 if (win) {
                     cell.className = "win";
                     cell.innerHTML = " &#128681;";
+                    result.classList.add("win")
+                    result.innerHTML = "VENCEU &#128516;"
 
                 } else {
                     cell.className = "mine";
                     cell.innerHTML = "&#128163;";
+                    result.classList.add("lost")
+                    result.innerHTML = "FIM DE JOGO &#128542;"
                 }
             }
         }

@@ -13,28 +13,48 @@ h1 {
     font-size: 18pt;
     font-weight: normal;
     text-align: center;
+    margin-bottom: 5px;
     }
     
-    #grid {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #grid tr td {
-        border: 1px solid #fff;
-        background-color: #999;
-        width: 25px;
-            height: 25px;
+    #result {
+        display: flex;
+        font-family: Courier, monospace;
         text-align: center;
+        font-size: 16pt;
+        width: 70%;
+        justify-content: center;
+        margin: 5px auto;
+        height: 30px;
     }
     
-    #grid tr td.active {
-        background-color: #333;
-        color: #fff;
+    #result.win {
+        background-color: #00bb00
     }
     
-    #grid tr td.mine {
-        background-color: rgb(216, 21, 21);
+    #result.lost {
+        background-color: #d81515;
+}
+
+#grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#grid tr td {
+    border: 1px solid #fff;
+    background-color: #999;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+#grid tr td.active {
+    background-color: #333;
+    color: #fff;
+}
+
+#grid tr td.mine {
+    background-color: #d81515;
     }
     
     #grid tr td.win {
